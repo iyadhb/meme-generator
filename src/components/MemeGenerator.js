@@ -10,6 +10,7 @@ class MemeGenerator extends Component {
       allMemeImgs: [],
       isLoading: false,
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -46,7 +47,7 @@ class MemeGenerator extends Component {
             name='bottomText'
             value={this.bottomText}
             placeholder='bottom Text'
-            onChange={this.state.handleChange}
+            onChange={this.handleChange}
           />
 
           <button>Gen</button>
