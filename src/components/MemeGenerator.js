@@ -10,8 +10,6 @@ class MemeGenerator extends Component {
       allMemeImgs: [],
       isLoading: false,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -24,20 +22,20 @@ class MemeGenerator extends Component {
         });
       });
   }
-  handleChange(event) {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
-  }
+  };
 
   // get random image from the array
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     const randNum = Math.floor(Math.random() * this.state.allMemeImgs.length);
     const randMemeImg = this.state.allMemeImgs[randNum].url;
     this.setState({ randomImg: randMemeImg });
-  }
+  };
 
   render() {
     return (
